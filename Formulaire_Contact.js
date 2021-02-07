@@ -1,8 +1,6 @@
 let Bouton1 = document.getElementById('B1');
 Bouton1.addEventListener('click',Recherche);
 
-
-
 function Recherche(){
     var Departement = document.getElementById("Departement");
     var ListeVilles = document.getElementById("ListeVilles");

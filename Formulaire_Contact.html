@@ -8,120 +8,28 @@
 </head>
 <body>
     <form id="formulaire" action="#" method="POST">
-        <fieldset>
+        <fieldset id="Residence">
             <legend>Votre résidence</legend>
-            <select name="Departement" id="Departement">
-                <option value="">***Choisissez***</option>
-                <option value="Ain">Ain</option>
-                <option value="Aines">Aisne</option>
-                <option value="Allier">Allier</option>
-                <option value="AlpesHauteProvence">Alpes de Haute Provence</option>
-                <option value="AlpesMaritimes">Alpes maritimes</option>
-                <option value="Ardeche">Ardèche</option>
-                <option value="Ardennes">Ardennes</option>
-                <option value="Ariege">Ariège</option>
-                <option value="Aube">Aube</option>
-                <option value="Aude">Aude</option>
-                <option value="Aveyron">Aveyron</option>
-                <option value="BasRhin">Bas-Rhin</option>
-                <option value="BoucheDuRhone">Bouche du Rhône</option>
-                <option value="Calvados">Calvados</option>
-                <option value="Cantal">Cantal</option>
-                <option value="Charente">Charente</option>
-                <option value="CharenteMaritime">Charente-Maritime</option>
-                <option value="Cher">Cher</option>
-                <option value="Correze">Corrèze</option>
-                <option value="CorseDuSud">Corse du sud</option>
-                <option value="CoteOr">Côte d'Or</option>
-                <option value="CoteArmor">Côtes d'Armor</option>
-                <option value="Creuse">Creuse</option>
-                <option value="DeuxSevres">Deux Sèvres</option>
-                <option value="Dordogne">Dordogne</option>
-                <option value="Doubs">Doubs</option>
-                <option value="Drome">Drôme</option>
-                <option value="Essonne">Essonne</option>
-                <option value="Eure">Eure</option>
-                <option value="EureEtLoire">Eure et Loire</option>
-                <option value="Finistere"></option>
-                <option value="Gard"></option>
-                <option value="Gers"></option>
-                <option value="Gironde"></option>
-                <option value="Guadeloupe"></option>
-                <option value="Guyane"></option>
-                <option value="HauteCorse"></option>
-                <option value="HauteGaronne"></option>
-                <option value="HauteLoire"></option>
-                <option value="HauteMarne"></option>
-                <option value="HautesAlpes"></option>
-                <option value="HauteSaone"></option>
-                <option value="HauteSavoie"></option>
-                <option value="HautesPyrenees"></option>
-                <option value="HauteVienne"></option>
-                <option value="HautRhin"></option>
-                <option value="HautDeSeine"></option>
-                <option value="Herault"></option>
-                <option value="IleEtVilaine"></option>
-                <option value="Indre"></option>
-                <option value="IndreEtLoire"></option>
-                <option value="Isere"></option>
-                <option value="Jura"></option>
-                <option value="LaReunion"></option>
-                <option value="Landes"></option>
-                <option value="Loire"></option>
-                <option value="LoireAtlantique"></option>
-                <option value="Loiret"></option>
-                <option value="LoirEtCher"></option>
-                <option value="Lot"></option>
-                <option value="LotEtGaronne"></option>
-                <option value="Lozere"></option>
-                <option value="MaineEtLoire"></option>
-                <option value="Manche"></option>
-                <option value="Marne"></option>
-                <option value="Martinique"></option>
-                <option value="Mayenne"></option>
-                <option value="MeurtheEtMoselle"></option>
-                <option value="Meuse"></option>
-                <option value="Morbihan"></option>
-                <option value="Moselle"></option>
-                <option value="Nievre"></option>
-                <option value="Nord"></option>
-                <option value="Oise"></option>
-                <option value="Orne"></option>
-                <option value="Paris"></option>
-                <option value="PasDeCalais"></option>
-                <option value="PuyDeDome"></option>
-                <option value="PyreneesAtlantiques"></option>
-                <option value="PyreneesOrientales"></option>
-                <option value="Rhone"></option>
-                <option value="SaoneEtLoire"></option>
-                <option value="Sarthe"></option>
-                <option value="Savoie"></option>
-                <option value="SeineEtMarne"></option>
-                <option value="SeineMaritime"></option>
-                <option value="SeineSaintDenis"></option>
-                <option value="Somme"></option>
-                <option value="Tarn"></option>
-                <option value="TarnEtGaronne"></option>
-                <option value="TerritoireDeBelfort"></option>
-                <option value="ValDeMarne"></option>
-                <option value="ValOise"></option>
-                <option value="Var"></option>
-                <option value="Vaucluse"></option>
-                <option value="Vendée"></option>
-                <option value="Vienne"></option>
-                <option value="Vosges"></option>
-                <option value="Yonne"></option>
-                <option value="Yvelines"></option>-->
-            </select><br>
-            <label for="SousChaine">Critères de recherche</label>
-            <select name="CritereRecherche" id="CritereRecherche">
-                <option value="Commence">commençant par</option>
-                <option value="Contient">contenant</option>
-                <option value="Finit">finissant par</option>
-            </select>
-            <input type="text" id="SousChaine"><br>
-            <input type="button" id="B1" value="Rechercher"><br>
-            <select name="ListeVilles" id="ListeVilles"></select>
+            <div id="BlocDepartement">
+                <p>Sélectionner votre département :</p>
+                <select name="Departement" id="Departement">
+                </select>
+            </div>
+            <div id="BlocVille">
+                <select name="CritereRecherche" id="CritereRecherche">
+                    <option value="Commence">Villes commençant par</option>
+                    <option value="CodePostal">Code postal</option>
+                </select>
+                <input type="text" id="SousChaine">
+                <input type="button" id="B1" value="Rechercher"><br>
+                <select name="ListeVilles" id="ListeVilles"></select>
+            </div>
+            <div id="BlocVoirie">
+                <label for="Adresse">Votre adresse :</label>
+                <input type="text" id="Adresse" name="Adresse"><br>
+                <label for="CompAdresse">Complément postal :</label>
+                <input type="text" id="CompAdresse" name="CompAdresse">
+            </div>
         </fieldset>
         <input type="reset">
     </form>

@@ -1,11 +1,11 @@
 let Bouton1 = document.getElementById('B1');
 Bouton1.addEventListener('click',Recherche);
-let Bouton2 = document.getElementById('Departement');
-Bouton2.addEventListener('focus',listeDpt);
+let listeDPT = document.getElementById('Departement');
+listeDPT.addEventListener('focus',listeDpt);
 
 function listeDpt(){
 
-    let Tableau_DPT = new Array('Choisissez','Choisissez','Ain','Ain','Aines','Aines','Allier','Allier','Alpes de Haute Provence','AlpesHauteProvence','AlpesMaritimes','AlpesMaritimes','Ardèche','Ardeche','Ardennes','Ardennes','Ariège','Ariege','Aube','Aube','Aude','Aude','Aveyron','Aveyron','Bas-Rhin','BasRhin','Bouche du Rhône','BoucheDuRhone','Calvados','Calvados','Cantal','Cantal','Charente','Charente','Charente Maritime','CharenteMaritime','Cher','Cher','Corrèze','Correze','Corse du Sud','CorseDuSud','Côte d\'Or','CoteOr','Côte d\'Armor','CoteArmor','Creuse','Creuse','Deux Sèvres','DeuxSevres','Dordogne','Dordogne','Doubs','Doubs','Drôme','Drome','Essonne','Essonne','Eure','Eure','Eure et Loire','EureEtLoire','Finistère','Finistere','Gard','Gard','Gers','Gers','Gironde','Gironde','Guadeloupe','Guadeloupe','Guyane','Guyane','Haute-Corse','HauteCorse','Haute-Garonne','HauteGaronne','Haute-Loire','HauteLoire','Haute-Marne','HauteMarne',
+    let Tableau_DPT = new Array('Choisissez','Choisissez','Ain','Ain','Aines','Aines','Allier','Allier','Alpes de Haute Provence','AlpesHauteProvence','Alpes Maritimes','AlpesMaritimes','Ardèche','Ardeche','Ardennes','Ardennes','Ariège','Ariege','Aube','Aube','Aude','Aude','Aveyron','Aveyron','Bas-Rhin','BasRhin','Bouche du Rhône','BoucheDuRhone','Calvados','Calvados','Cantal','Cantal','Charente','Charente','Charente Maritime','CharenteMaritime','Cher','Cher','Corrèze','Correze','Corse du Sud','CorseDuSud','Côte d\'Or','CoteOr','Côte d\'Armor','CoteArmor','Creuse','Creuse','Deux Sèvres','DeuxSevres','Dordogne','Dordogne','Doubs','Doubs','Drôme','Drome','Essonne','Essonne','Eure','Eure','Eure et Loire','EureEtLoire','Finistère','Finistere','Gard','Gard','Gers','Gers','Gironde','Gironde','Guadeloupe','Guadeloupe','Guyane','Guyane','Haute-Corse','HauteCorse','Haute-Garonne','HauteGaronne','Haute-Loire','HauteLoire','Haute-Marne','HauteMarne',
     'Hautes Alpes','HautesAlpes','Haute-Saône','HauteSaone','Haute-Savoie','HauteSavoie','Hautes-Pyrénées','HautesPyrenees','Haute-Vienne','HauteVienne','Haut-Rhin','HautRhin','Hauts de Seine','HautsDeSeine','Hérault','Herault','Ile et Vilaine','IleEtVilaine','Indre','Indre','Indre et Loire','IndreEtLoire','Isère','Isere','Jura','Jura','La Réunion','LaReunion','Landes','Landes','Loire','Loire','Loire Atlantique','LoireAtlantique','Loiret','Loiret','Loir et Cher','LoirEtCher','Lot','Lot','Lot et Garonne','LotEtGaronne','Lozère','Lozere','Maine et Loire','MaineEtLoire','Manche','Manche','Marne','Marne','Martinique','Martinique','Mayenne','Mayenne','Meurthe et Moselle','MeurtheEtMoselle','Meuse','Meuse','Morbihan','Morbihan','Moselle','Moselle','Nièvre','Nievre','Nord','Nord','Oise','Oise','Orne','Orne','Paris','Paris','Pas de Calais','PasDeCalais','Puy de Dôme','PuyDeDome','Pyrénées Atlantiques','PyreneesAtlantiques','Pyrénées Orientales','PyreneesOrientales','Rhône','Rhone','Saône et Loire','SaoneEtLoire','Sarthe','Sarthe','Savoie','Savoie','Seine et Marne','SeineEtMarne','Seine Maritime','SeineMaritime','Seine Saint Denis','SeineSaintDenis','Somme','Somme','Tarn','Tarn','Tarn et Garonne','TarnEtGaronne','Territoire de Belfort','TerritoireDeBelfort','Val de Marne','ValDeMarne','Val d\'Oise','ValOise','Var','Var','Vaucluse','Vaucluse','Vendée','Vendee','Vienne','Vienne','Vosges','Vosges','Yonne','Yonne','Yvelines','Yvelines');
     let Departement = document.getElementById('Departement');
 
@@ -132,44 +132,70 @@ function Recherche(){
     var SelectionVilles = new Array();
     let Ref=0;
     
-            ListeVilles.options.length = 0;
-            switch(CritereRecherche){
-                case "Commence" :
-                    if(Departement.value == "Choisissez"){
-                        alert('Choisissez un département');
-                        break;
-                    }
-                    else{
-                        for(let i=0;i<Tableau_DPT_1.length;i++){
-                            if(choixDpt ==Tableau_DPT_1[i][0]){
-                                Ref = i;
-                                break;
-                            }
-                        }
-                    }
-                    for(let i=1; i<Tableau_DPT_1[Ref].length;i++){
-                        if(Tableau_DPT_1[Ref][i].startsWith(SousChaine)){
-                        SelectionVilles.push(Tableau_DPT_1[Ref][i]);
-                        }
-                    }
-                    for(let i=0; i< SelectionVilles.length;i++){
-                        var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
-                        ListeVilles.options[i] = opt;
-                    }
-                    break;
-                case "CodePostal" :
-                    for(let i=0; i<Tableau_DPT_1.length;i++){
-                        for(let j=0; j<Tableau_DPT_1[i].length;j++){
-                            if(Tableau_DPT_1[i][j].includes(SousChaine)==true){
-                                SelectionVilles.push(Tableau_DPT_1[i][j]);
-                            }        
-                        }
-                    }
-                    for(let i=0; i< SelectionVilles.length;i++){
-                        var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
-                        ListeVilles.options[i] = opt;
-                    }
-                    break;
-            }
-        
+    ListeVilles.options.length = 0;
+    if(choixDpt=='Choisissez' && SousChaine == ''){
+        alert('Veuillez saisir un code postal ou les premières lettres d\'une ville');
+        return;
     }
+    if(choixDpt=='Choisissez'){
+        switch(CritereRecherche){
+            case "Commence":
+                for(let i=0; i<Tableau_DPT_1.length;i++){
+                    for(let j=0; j<Tableau_DPT_1[i].length;j++){
+                        if(Tableau_DPT_1[i][j].startsWith(SousChaine)==true){
+                            SelectionVilles.push(Tableau_DPT_1[i][j]);
+                        }        
+                    }
+                }
+                for(let i=0; i< SelectionVilles.length;i++){
+                    var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
+                    ListeVilles.options[i] = opt;
+                }
+            break;
+            case "CodePostal":
+                for(let i=0; i<Tableau_DPT_1.length;i++){
+                    for(let j=0; j<Tableau_DPT_1[i].length;j++){
+                        if(Tableau_DPT_1[i][j].includes(SousChaine)==true){
+                            SelectionVilles.push(Tableau_DPT_1[i][j]);
+                        }        
+                    }
+                }
+                for(let i=0; i< SelectionVilles.length;i++){
+                    var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
+                    ListeVilles.options[i] = opt;
+                }
+            break;
+        }
+    }else{
+        for(let i=0;i<Tableau_DPT_1.length;i++){
+            if(choixDpt ==Tableau_DPT_1[i][0]){
+                Ref = i;
+                break;
+            }
+        }
+        switch(CritereRecherche){
+            case "Commence":
+                for(let i=1; i<Tableau_DPT_1[Ref].length;i++){
+                    if(Tableau_DPT_1[Ref][i].startsWith(SousChaine)){
+                    SelectionVilles.push(Tableau_DPT_1[Ref][i]);
+                    }
+                }
+                for(let i=0; i< SelectionVilles.length;i++){
+                    var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
+                    ListeVilles.options[i] = opt;
+                }
+            break;
+            case "CodePostal":
+                for(let i=1; i<Tableau_DPT_1[Ref].length;i++){
+                    if(Tableau_DPT_1[Ref][i].includes(SousChaine)){
+                    SelectionVilles.push(Tableau_DPT_1[Ref][i]);
+                    }
+                }
+                for(let i=0; i< SelectionVilles.length;i++){
+                    var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
+                    ListeVilles.options[i] = opt;
+                }
+            break;
+        }
+    }
+}

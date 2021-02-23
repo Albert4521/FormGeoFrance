@@ -127,22 +127,39 @@ function Recherche(){
     var Departement = document.getElementById("Departement");
     var ListeVilles = document.getElementById("ListeVilles");
     var CritereRecherche = document.getElementById('CritereRecherche').value;
-    var SousChaine = document.getElementById("SousChaine").value;
+    var SousChaine1 = document.getElementById("SousChaine").value;
     var choixDpt = Departement.options[Departement.selectedIndex].value;
     var SelectionVilles = new Array();
     let Ref=0;
+    let SousChaine2=0;
+    let ComparVal=0;
     
     ListeVilles.options.length = 0;
-    if(choixDpt=='Choisissez' && SousChaine == ''){
+    if(choixDpt=='Choisissez' && SousChaine1 == ''){
         alert('Veuillez saisir un code postal ou les premières lettres d\'une ville');
         return;
     }
+    SousChaine2 = SousChaine1.toLowerCase();
+    SousChaine2 = SousChaine2.replace(/ste/g,'sainte');
+    SousChaine2 = SousChaine2.replace(/st/g,'saint');
+    SousChaine2 = SousChaine2.replace(/-/g,' ');
+    SousChaine2 = SousChaine2.replace(/â|à/g,'a');
+    SousChaine2 = SousChaine2.toUpperCase();
+
+    /*let NvlChaine = Saisie.replace(/a|e|i|o|u/g,'Z');
+    NvlChaine = NvlChaine.toUpperCase();*/
+
     if(choixDpt=='Choisissez'){
         switch(CritereRecherche){
             case "Commence":
                 for(let i=0; i<Tableau_DPT_1.length;i++){
                     for(let j=0; j<Tableau_DPT_1[i].length;j++){
-                        if(Tableau_DPT_1[i][j].startsWith(SousChaine)==true){
+                        ComparVal = Tableau_DPT_1[i][j];
+                        ComparVal = ComparVal.toLowerCase();
+                        ComparVal = ComparVal.replace(/â|à/g,'a');
+                        ComparVal = ComparVal.replace(/-/g,' ');
+                        ComparVal = ComparVal.toUpperCase();
+                        if(ComparVal.startsWith(SousChaine2)==true){
                             SelectionVilles.push(Tableau_DPT_1[i][j]);
                         }        
                     }
@@ -176,7 +193,12 @@ function Recherche(){
         switch(CritereRecherche){
             case "Commence":
                 for(let i=1; i<Tableau_DPT_1[Ref].length;i++){
-                    if(Tableau_DPT_1[Ref][i].startsWith(SousChaine)){
+                    ComparVal = Tableau_DPT_1[Ref][i];
+                    ComparVal = ComparVal.toLowerCase();
+                    ComparVal = ComparVal.replace(/â|à/g,'a');
+                    ComparVal = ComparVal.replace(/-/g,' ');
+                    ComparVal = ComparVal.toUpperCase();
+                    if(ComparVal.startsWith(SousChaine2)){
                     SelectionVilles.push(Tableau_DPT_1[Ref][i]);
                     }
                 }

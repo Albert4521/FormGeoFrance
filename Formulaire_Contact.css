@@ -28,15 +28,3 @@ input[type="button"]{
 input[type="reset"]{
     margin: 0.5rem 0.5rem 0.5rem 0.2rem;
 }
-#BlocVoirie label{
-    margin-bottom: 0.5rem;
-}
-#Adresse{
-    width: 20rem;
-    margin-left: 2.9rem;
-    margin-bottom: 1rem;
-}
-#CompAdresse{
-    width: 20rem;
-    margin-left: 0.5rem;
-}

@@ -22,9 +22,6 @@ input[type="button"]{
     width: 17rem;
     margin: 0.5rem 0.25rem 0.5rem 0rem;
 }
-#BlocVoirie{
-    margin-top: 1rem;
-}
 input[type="reset"]{
     margin: 0.5rem 0.5rem 0.5rem 0.2rem;
 }

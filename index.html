@@ -30,24 +30,38 @@
         <input type="button" id="B2" value="Choisir Ville A">
         <input type="button" id="B3" value="Choisir Ville B">
     </form>
-    <form action=""></form>
-    <fieldset>
-        <legend>Ville A</legend>
-        <p id="NomVilleA"></p>
-        <label for="LatVilleA"></label>
-        <input type="number" id="LatVilleA">
-        <label for="LongVilleA"></label>
-        <input type="number" id="LongVilleA">
-        <input type="reset">
-    </fieldset>
-    <fieldset>
-        <legend>Ville B</legend>
-        <p id="NomVilleB"></p>
-        <label for="LatVilleB"></label>
-        <input type="number" id="LatVilleB">
-        <label for="LongVilleB"></label>
-        <input type="number" id="LongVilleB">
-        <input type="reset">
-    </fieldset> 
+    <form action="">
+        <fieldset>
+            <legend>Ville A</legend>
+            <div class="champ">
+                <p>Nom :&nbsp;</p>
+                <p id="NomVilleA"></p>
+            </div>
+            <div class="champ">
+                <p>Latitude :&nbsp;</p>
+                <p id="LatVilleA"></p>
+            </div>
+            <div class="champ">
+                <p>Longitude :&nbsp;</p>
+                <p id="LongVilleA"></p>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Ville B</legend>
+            <div class="champ">
+                <p>Nom :&nbsp;</p>
+                <p id="NomVilleB"></p>
+            </div>
+            <div class="champ">
+                <p>Latitude :&nbsp;</p>
+                <p id="LatVilleB"></p>
+            </div>
+            <div class="champ">
+                <p>Longitude :&nbsp;</p>
+                <p id="LongVilleB"></p>
+            </div>
+        </fieldset>
+        <input type="button" id="B4" value="Effacer">
+    </form>
 </body>
 </html>

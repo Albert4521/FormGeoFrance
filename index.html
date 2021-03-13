@@ -3,35 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulaire Contact</title>
-    <link rel="stylesheet" href="Formulaire_Contact.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="Formulaire_Contact.js" async></script>
 </head>
 <body>
-    <form id="formulaire" action="#" method="POST">
-        <fieldset id="Residence">
-            <legend>Votre résidence</legend>
-            <div id="BlocDepartement">
-                <p>Sélectionner votre département :</p>
-                <select name="Departement" id="Departement">
-                    <option value="Choisissez">Choisissez</option>
-                </select>
-            </div>
-            <div id="BlocVille">
-                <select name="CritereRecherche" id="CritereRecherche">
-                    <option value="Commence">Villes commençant par</option>
-                    <option value="CodePostal">Code postal</option>
-                </select>
-                <input type="text" id="SousChaine">
-                <select name="ListeVilles" id="ListeVilles"></select>
-            </div>
-        </fieldset>
-        <input type="reset">
-        <input type="button" id="B1" value="Choisir Ville A">
-        <input type="button" id="B2" value="Choisir Ville B">
+    <form class="selection">
+        <div class="selection__criteres">
+            <p>Choisir une ville :</p>
+            <select class="selection__criteres__1" id="CritereRecherche">
+                <option value="Commence">Villes commençant par</option>
+                <option value="CodePostal">Code postal</option>
+            </select>
+            <input  class="selection__criteres__2" type="text" id="SousChaine">
+            <select  class="selection__criteres__3" id="Departement">
+                <option value="Choisissez">Choisissez un département</option>
+            </select>
+        </div>
+        <div class="selection__ville">
+            <select id="ListeVilles"></select>
+        </div>
+        <div class="selection__actions">
+            <input type="button" class="bouton" id="B1" value="Choisir Ville A">
+            <input type="button" class="bouton" id="B2" value="Choisir Ville B">
+            <input type="button" class="bouton" id="B3" value="Effacer">
+        </div>
     </form>
-    <form action="">
-        <fieldset>
-            <legend>Ville A</legend>
+    <section class="affichage">
+        <article class="affichage__villeA">
             <div class="champ">
                 <p>Nom :&nbsp;</p>
                 <p id="NomVilleA"></p>
@@ -44,9 +42,8 @@
                 <p>Longitude :&nbsp;</p>
                 <p id="LongVilleA"></p>
             </div>
-        </fieldset>
-        <fieldset>
-            <legend>Ville B</legend>
+        </article>
+        <article class="affichage__villeB">
             <div class="champ">
                 <p>Nom :&nbsp;</p>
                 <p id="NomVilleB"></p>
@@ -59,8 +56,16 @@
                 <p>Longitude :&nbsp;</p>
                 <p id="LongVilleB"></p>
             </div>
-        </fieldset>
-        <input type="button" id="B4" value="Effacer">
-    </form>
+        </article>
+        <article class="affichage__actions">
+            <input type="button" class="bouton" id="B4" value="Effacer">
+            <input type="button" class="bouton" id="B5" value="Calculer">
+        </article>
+    </section>
+    <section class="resultats">
+        <article class="resultats__distance"></article>
+        <article class="resultats__azimuth"></article>
+        <article class="resultats__actions"></article>
+    </section>
 </body>
 </html>

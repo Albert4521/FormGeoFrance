@@ -6,6 +6,8 @@ let Bouton1 = document.getElementById('B1');
 Bouton1.addEventListener('click',ChoixVilleA);
 let Bouton2 = document.getElementById('B2');
 Bouton2.addEventListener('click',ChoixVilleB);
+let Bouton3 = document.getElementById('B3');
+Bouton3.addEventListener('click',Effacer1);
 let Bouton4 = document.getElementById('B4');
 Bouton4.addEventListener('click',Effacer2);
 
@@ -373,6 +375,11 @@ function ChoixVilleB(){
     nomVilleB.innerHTML = choixVille;
     latVilleB.innerHTML = GPS[refX][refY];
     longVilleB.innerHTML = GPS[refX][refY+1];
+}
+
+function Effacer1(){
+    ListeVilles.options.length = 0;
+    listeDpt();
 }
 
 function Effacer2(){

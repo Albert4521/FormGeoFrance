@@ -1,0 +1,195 @@
+body{
+    position: relative;
+    min-width: 320px;
+    max-width: 900px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #2b353e;
+}
+.selection{
+    box-sizing: border-box;
+    border: groove 2px black;
+    border-radius: 1rem;
+    margin: 0.25rem;
+    padding: 1rem;
+    background-color: blanchedalmond;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    font-size: 1rem;
+}
+.selection p{
+    font-size: 1.5rem;
+}
+.selection__criteres, .selection__ville{
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0.5rem;
+}
+.selection__criteres p{
+    box-sizing: border-box;
+    position: relative;
+    padding: 0;
+    margin: 0.25rem;
+}
+
+.selection__criteres__1{
+    box-sizing: border-box;
+    position: relative;
+    min-width: 10rem;
+    max-width: 18rem;
+    height: 1.5rem;
+    margin: 0.25rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+.selection__criteres__2{
+    box-sizing: border-box;
+    position: relative;
+    min-width: 10rem;
+    max-width: 18rem;
+    height: 1.5rem;
+    margin: 0.25rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+.selection__criteres__3{
+    box-sizing: border-box;
+    position: relative;
+    min-width: 10rem;
+    max-width: 18rem;
+    height: 1.5rem;
+    margin: 0.25rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+.selection__ville select{
+    box-sizing: border-box;
+    position: relative;
+    min-width: 12rem;
+    max-width: 22rem;
+    height: 1.4rem;
+    line-height: 1.5rem;
+    margin: 0.25rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+.selection__actions{
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+}
+.selection__actions input{
+    font-size: 0.9rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    margin: 1%;
+    font-weight: bold;
+}
+.selection__actions input:nth-child(1){
+    background-color: rgb(80, 80, 158);
+    width: 33%;
+    min-width: 7rem;
+    max-width: 10rem;
+}
+.selection__actions input:nth-child(1):hover{
+    background-color: rgba(80, 80, 158,0.7);
+}
+.selection__actions input:nth-child(2){
+    background-color: rgb(66, 165, 63);
+    width: 33%;
+    min-width: 7rem;
+    max-width: 10rem;
+}
+.selection__actions input:nth-child(2):hover{
+    background-color: rgba(66, 165, 63,0.7);
+}
+.selection__actions input:nth-child(3){
+    width: 20%;
+    min-width: 4rem;
+    max-width: 10rem;
+    background-color: rgb(184, 40, 40);
+}
+.selection__actions input:nth-child(3):hover{
+    background-color: rgba(184, 40, 40, 0.7);
+}
+
+.affichage{
+    font-size: 1.2rem;
+}
+.affichage__villeA, .affichage__villeB{
+    box-sizing: border-box;
+    border: groove 2px black;
+    border-radius: 1rem;
+    margin: 0.25rem;
+    padding: 1rem;
+    background-color: blanchedalmond;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    font-size: 1.2rem;
+}
+.affichage__villeA{
+    background-color: rgb(80, 80, 158);
+}
+.affichage__villeA>.champ p:nth-child(2){
+    font-weight: bold;
+}
+.affichage__villeB{
+    background-color: rgb(66, 165, 63);
+}
+.affichage__villeB>.champ p:nth-child(2){
+    font-weight: bold;
+}
+.affichage__actions{
+    box-sizing: border-box;
+    border: groove 2px black;
+    border-radius: 1rem;
+    margin: 0.25rem;
+    padding: 0.25rem;
+    background-color: blanchedalmond;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    font-size: 1rem;
+}
+.affichage__actions input{
+    font-size: 0.9rem;
+    width: 45%;
+    min-width: 5rem;
+    max-width: 12rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    margin: 2%;
+    background-color: burlywood;
+    font-weight: bold;
+}
+.champ{
+    margin: 0.25rem;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.champ p{
+    margin: 0;
+    padding: 0;
+}

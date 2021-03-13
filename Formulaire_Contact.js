@@ -1,11 +1,11 @@
-let Bouton1 = document.getElementById('B1');
-Bouton1.addEventListener('click',Recherche);
+let ListeVilles = document.getElementById("ListeVilles");
+ListeVilles.addEventListener('focus',rechercheVille)
 let listeDPT = document.getElementById('Departement');
 listeDPT.addEventListener('focus',listeDpt);
+let Bouton1 = document.getElementById('B1');
+Bouton1.addEventListener('click',ChoixVilleA);
 let Bouton2 = document.getElementById('B2');
-Bouton2.addEventListener('click',ChoixVilleA);
-let Bouton3 = document.getElementById('B3');
-Bouton3.addEventListener('click',ChoixVilleB);
+Bouton2.addEventListener('click',ChoixVilleB);
 let Bouton4 = document.getElementById('B4');
 Bouton4.addEventListener('click',Effacer);
 
@@ -229,9 +229,8 @@ function listeDpt(){
     }
 }
 
-function Recherche(){
+function rechercheVille(){
     let Departement = document.getElementById('Departement');
-    let ListeVilles = document.getElementById("ListeVilles");
     let CritereRecherche = document.getElementById('CritereRecherche').value;
     let SousChaine1 = document.getElementById("SousChaine").value;
     let choixDpt = Departement.options[Departement.selectedIndex].value;
@@ -334,11 +333,8 @@ function Recherche(){
     }
 }
 
-
-
 function ChoixVilleA(){
-    let listeVilles = document.getElementById("ListeVilles");
-    let choixVille = listeVilles.options[listeVilles.selectedIndex].value;
+    let choixVille = ListeVilles.options[ListeVilles.selectedIndex].value;
     let nomVilleA = document.getElementById('NomVilleA');
     let latVilleA = document.getElementById('LatVilleA');
     let longVilleA = document.getElementById('LongVilleA');    
@@ -359,8 +355,7 @@ function ChoixVilleA(){
 }
 
 function ChoixVilleB(){
-    let listeVilles = document.getElementById("ListeVilles");
-    let choixVille = listeVilles.options[listeVilles.selectedIndex].value;
+    let choixVille = ListeVilles.options[ListeVilles.selectedIndex].value;
     let nomVilleB = document.getElementById('NomVilleB');
     let latVilleB = document.getElementById('LatVilleB');
     let longVilleB = document.getElementById('LongVilleB');    

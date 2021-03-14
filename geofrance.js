@@ -9,7 +9,7 @@ Bouton2.addEventListener('click',ChoixVilleB);
 let Bouton3 = document.getElementById('B3');
 Bouton3.addEventListener('click',Effacer1);
 let Bouton4 = document.getElementById('B4');
-Bouton4.addEventListener('click',CalculDistance);
+Bouton4.addEventListener('click',Calcul);
 let Bouton5 = document.getElementById('B5');
 Bouton5.addEventListener('click',Effacer2);
 
@@ -384,15 +384,50 @@ function CalculDistance(){
     let latitudeB = document.getElementById('LatVilleB').innerHTML;
     let longitudeB = document.getElementById('LongVilleB').innerHTML;
     let Distance = document.getElementById('Distance');
+    
     let latA = latitudeA * Math.PI / 180;
     let longA = longitudeA * Math.PI / 180;
     let latB = latitudeB * Math.PI / 180;
     let longB = longitudeB * Math.PI / 180;
+    
     let distance = Math.acos(Math.cos(latA)*Math.cos(latB)*Math.cos((longB-longA))+Math.sin(latA)*Math.sin(latB))*6371;
     Distance.innerHTML = Math.round(distance*100)/100;
 }
+function CalculAzimuth(){
+    let latitudeA = document.getElementById('LatVilleA').innerHTML;
+    let longitudeA = document.getElementById('LongVilleA').innerHTML;
+    let latitudeB = document.getElementById('LatVilleB').innerHTML;
+    let longitudeB = document.getElementById('LongVilleB').innerHTML;
+    let Azimuth = document.getElementById('Azimuth');
+    
+    let latA = latitudeA * Math.PI / 180;
+    let longA = longitudeA * Math.PI / 180;
+    let latB = latitudeB * Math.PI / 180;
+    let longB = longitudeB * Math.PI / 180;
+
+    let X = Math.cos(latA)*Math.sin(latB)-Math.sin(latA)*Math.cos(latB)*Math.cos(longB-longA);
+    let Y = Math.sin(longB-longA)*Math.cos(latB);
+    let azimuth = 2*Math.atan(Y/(Math.sqrt(X**2+Y**2)+X));
+    azimuth = azimuth * 180 / Math.PI;
+    azimuth = Math.round(azimuth);
+    Azimuth.innerHTML = azimuth;
+}
+
+function Calcul(){
+    let nomVilleA = document.getElementById('NomVilleA').innerHTML;
+    let nomVilleB = document.getElementById('NomVilleB').innerHTML;
+    let Depart = document.getElementById('Depart');
+    let Arrivee = document.getElementById('Arrivee');
+
+    CalculDistance();
+    CalculAzimuth();
+    Depart.innerHTML = nomVilleA;
+    Arrivee.innerHTML = nomVilleB;
+}
+
 function Effacer1(){
     let SousChaine = document.getElementById("SousChaine");
+
     SousChaine.value = '';
     ListeVilles.options.length = 0;
     listeDpt();
@@ -404,11 +439,20 @@ function Effacer2(){
     let longVilleA = document.getElementById('LongVilleA');    
     let nomVilleB = document.getElementById('NomVilleB');
     let latVilleB = document.getElementById('LatVilleB');
-    let longVilleB = document.getElementById('LongVilleB');    
+    let longVilleB = document.getElementById('LongVilleB');
+    let Depart = document.getElementById('Depart');
+    let Arrivee = document.getElementById('Arrivee').innerHTML;
+    let Distance = document.getElementById('Distance');
+    let Azimuth = document.getElementById('Azimuth');
+    
     nomVilleA.innerHTML = '';
     latVilleA.innerHTML = '';
     longVilleA.innerHTML = '';
     nomVilleB.innerHTML = '';
     latVilleB.innerHTML = '';
     longVilleB.innerHTML = '';
+    Depart.innerHTML = '';
+    Arrivee.innerHTML = '';
+    Distance.innerHTML = '';
+    Azimuth.innerHTML = '';
 }

@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>Formulaire Contact</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="Formulaire_Contact.js" async></script>
+    <script src="geofrance.js" async></script>
 </head>
 <body>
+    <h1>GeoFrance</h1>
     <form class="selection">
         <div class="selection__criteres">
             <p>Choisir une ville :</p>
@@ -30,8 +31,8 @@
     </form>
     <section class="affichage">
         <article class="affichage__villeA">
+            <p>Ville A</p>
             <div class="champ">
-                <p>Nom :&nbsp;</p>
                 <p id="NomVilleA"></p>
             </div>
             <div class="champ">
@@ -44,8 +45,8 @@
             </div>
         </article>
         <article class="affichage__villeB">
+            <p>Ville B</p>
             <div class="champ">
-                <p>Nom :&nbsp;</p>
                 <p id="NomVilleB"></p>
             </div>
             <div class="champ">
@@ -58,13 +59,22 @@
             </div>
         </article>
         <article class="affichage__actions">
-            <input type="button" class="bouton" id="B4" value="Effacer">
-            <input type="button" class="bouton" id="B5" value="Calculer">
+            <input type="button" class="bouton" id="B4" value="Calculer">
+            <input type="button" class="bouton" id="B5" value="Effacer">
         </article>
     </section>
     <section class="resultats">
-        <article class="resultats__distance"></article>
-        <article class="resultats__azimuth"></article>
+        <h2>Georoute</h2>
+        <article class="resultats__distance">
+            <p>Distance à vol d'oiseau :&nbsp;</p>
+            <p id="Distance"></p>
+            <p>&nbsp; Km</p>
+        </article>
+        <article class="resultats__azimuth">
+            <p>Azimuth :&nbsp;</p>
+            <p id="azimuth"></p>
+            <p>&nbsp; °</p>
+        </article>
         <article class="resultats__actions"></article>
     </section>
 </body>

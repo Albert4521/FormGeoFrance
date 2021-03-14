@@ -1,6 +1,7 @@
 body{
     position: relative;
-    min-width: 320px;
+    width: 100%;
+    min-width: 360px;
     max-width: 900px;
     width: 100%;
     margin: 0;
@@ -102,22 +103,22 @@ body{
     font-weight: bold;
 }
 .selection__actions input:nth-child(1){
-    background-color: rgb(80, 80, 158);
+    background-color: rgb(119, 181, 254);
     width: 33%;
     min-width: 7rem;
     max-width: 10rem;
 }
 .selection__actions input:nth-child(1):hover{
-    background-color: rgba(80, 80, 158,0.7);
+    background-color: rgba(119, 181, 254,0.6);
 }
 .selection__actions input:nth-child(2){
-    background-color: rgb(66, 165, 63);
+    background-color: rgb(87, 213, 59);
     width: 33%;
     min-width: 7rem;
     max-width: 10rem;
 }
 .selection__actions input:nth-child(2):hover{
-    background-color: rgba(66, 165, 63,0.7);
+    background-color: rgba(87, 213, 59,0.6);
 }
 .selection__actions input:nth-child(3){
     width: 20%;
@@ -126,7 +127,7 @@ body{
     background-color: rgb(184, 40, 40);
 }
 .selection__actions input:nth-child(3):hover{
-    background-color: rgba(184, 40, 40, 0.7);
+    background-color: rgba(184, 40, 40, 0.6);
 }
 
 .affichage{
@@ -147,13 +148,13 @@ body{
     font-size: 1.2rem;
 }
 .affichage__villeA{
-    background-color: rgb(80, 80, 158);
+    background-color: rgb(119, 181, 254);
 }
 .affichage__villeA>.champ p:nth-child(2){
     font-weight: bold;
 }
 .affichage__villeB{
-    background-color: rgb(66, 165, 63);
+    background-color: rgb(87, 213, 59);
 }
 .affichage__villeB>.champ p:nth-child(2){
     font-weight: bold;

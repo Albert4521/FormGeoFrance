@@ -378,6 +378,8 @@ function ChoixVilleB(){
 }
 
 function Effacer1(){
+    let SousChaine = document.getElementById("SousChaine");
+    SousChaine.value = '';
     ListeVilles.options.length = 0;
     listeDpt();
 }

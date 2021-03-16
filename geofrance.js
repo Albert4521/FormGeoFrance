@@ -235,19 +235,30 @@ function listeDpt(){
 
 function rechercheVille(){
     let Departement = document.getElementById('Departement');
-    let CritereRecherche = document.getElementById('CritereRecherche').value;
+    let criteres = document.getElementsByName("criteres");
+    let critere = 0;
     let SousChaine1 = document.getElementById("SousChaine").value;
     let choixDpt = Departement.options[Departement.selectedIndex].value;
     let SelectionVilles = new Array();
     let Ref=0;
     let SousChaine2=0;
     let ComparVal=0;
-    
+    //Détermination du type de critère de recherche
+    for(let i=0; i<criteres.length;i++){
+        if(criteres[i].checked == true){
+            critere = criteres[i].value;
+        }
+    }
+
+//Remise à zéro de la liste précédente des villes
     ListeVilles.options.length = 0;
+
+//On vérifie si au moins un département est sélectionné ou qu'un critère de recherche est saisi
     if(choixDpt=='Choisissez' && SousChaine1 == ''){
         alert('Veuillez saisir un code postal ou les premières lettres d\'une ville');
         return;
     }
+//On traite les lettes accentuées et la casse de la sous chaine reliée au critère de recherche
     SousChaine2 = SousChaine1.toLowerCase();
     SousChaine2 = SousChaine2.replace(/ste/g,'sainte');
     SousChaine2 = SousChaine2.replace(/st/g,'saint');
@@ -257,12 +268,15 @@ function rechercheVille(){
     SousChaine2 = SousChaine2.replace(/ï|î/g,'i');
     SousChaine2 = SousChaine2.replace(/ü|û/g,'u');
     SousChaine2 = SousChaine2.toUpperCase();            
-
+//Si choixDpt = Choisissez, alors il s'agit d'une recherche nationale
     if(choixDpt=='Choisissez'){
-        switch(CritereRecherche){
-            case "Commence":
+        switch(critere){
+//CAS n°1 : le nom de la ville commence par les lettres recherchées ...
+            case "commence":
+//On va parcourir toutes les villes de chaque département au moyen d'une double boucle
                 for(let i=0; i<DPT.length;i++){
                     for(let j=0; j<DPT[i].length;j++){
+//On traite les lettes accentuées et la casse des valaeurs de notre base de données
                         ComparVal = DPT[i][j];
                         ComparVal = ComparVal.toLowerCase();
                         ComparVal = ComparVal.replace(/â|à/g,'a');
@@ -271,7 +285,32 @@ function rechercheVille(){
                         ComparVal = ComparVal.replace(/ü|û/g,'u');                    
                         ComparVal = ComparVal.replace(/-/g,' ');
                         ComparVal = ComparVal.toUpperCase();
+//Si une valeur correspond au critère, elle sera stockée provisoirement dans un tableau
                         if(ComparVal.startsWith(SousChaine2)==true){
+                            SelectionVilles.push(DPT[i][j]);
+                        }        
+                    }
+                }
+//On créé la liste personnalisée des villes correspondant aux critères
+                for(let i=0; i< SelectionVilles.length;i++){
+                    var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
+                    ListeVilles.options[i] = opt;
+                }
+            break;
+//CAS n°2 : le nom de la ville contient la chaine de caractères recherchée ...
+            case "contient":
+                for(let i=0; i<DPT.length;i++){
+                    for(let j=0; j<DPT[i].length;j++){
+//On traite les lettes accentuées et la casse des valaeurs de notre base de données
+                        ComparVal = DPT[i][j];
+                        ComparVal = ComparVal.toLowerCase();
+                        ComparVal = ComparVal.replace(/â|à/g,'a');
+                        ComparVal = ComparVal.replace(/ê|é|è|ë/g,'e');
+                        ComparVal = ComparVal.replace(/ï|î/g,'i');
+                        ComparVal = ComparVal.replace(/ü|û/g,'u');                    
+                        ComparVal = ComparVal.replace(/-/g,' ');
+                        ComparVal = ComparVal.toUpperCase();
+                        if(ComparVal.includes(SousChaine2)==true){
                             SelectionVilles.push(DPT[i][j]);
                         }        
                     }
@@ -281,7 +320,8 @@ function rechercheVille(){
                     ListeVilles.options[i] = opt;
                 }
             break;
-            case "CodePostal":
+//CAS n°3 : le nom de la ville posède le code postal recherché ...
+            case "codePostal":
                 for(let i=0; i<DPT.length;i++){
                     for(let j=0; j<DPT[i].length;j++){
                         if(DPT[i][j].includes(SousChaine1)==true){
@@ -302,8 +342,8 @@ function rechercheVille(){
                 break;
             }
         }
-        switch(CritereRecherche){
-            case "Commence":
+        switch(critere){
+            case "commence":
                 for(let i=1; i<DPT[Ref].length;i++){
                     ComparVal = DPT[Ref][i];
                     ComparVal = ComparVal.toLowerCase();
@@ -322,7 +362,27 @@ function rechercheVille(){
                     ListeVilles.options[i] = opt;
                 }
             break;
-            case "CodePostal":
+            case "contient":
+                for(let i=1; i<DPT[Ref].length;i++){
+                    ComparVal = DPT[Ref][i];
+                    ComparVal = ComparVal.toLowerCase();
+                    ComparVal = ComparVal.replace(/â|à/g,'a');
+                    ComparVal = ComparVal.replace(/ê|é|è|ë/g,'e');
+                    ComparVal = ComparVal.replace(/ï|î/g,'i');
+                    ComparVal = ComparVal.replace(/ü|û/g,'u');                    
+                    ComparVal = ComparVal.replace(/-/g,' ');
+                    ComparVal = ComparVal.toUpperCase();
+                    if(ComparVal.includes(SousChaine2)){
+                    SelectionVilles.push(DPT[Ref][i]);
+                    }
+                }
+                for(let i=0; i< SelectionVilles.length;i++){
+                    var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
+                    ListeVilles.options[i] = opt;
+                }
+            break;
+
+            case "codePostal":
                 for(let i=1; i<DPT[Ref].length;i++){
                     if(DPT[Ref][i].includes(SousChaine1)){
                     SelectionVilles.push(DPT[Ref][i]);

@@ -10,13 +10,21 @@
     <h1>GeoFrance</h1>
     <form class="selection">
         <div class="selection__criteres">
-            <p>Choisir une ville :</p>
-            <select class="selection__criteres__1" id="CritereRecherche">
-                <option value="Commence">Villes commençant par</option>
-                <option value="CodePostal">Code postal</option>
-            </select>
-            <input  class="selection__criteres__2" type="text" id="SousChaine">
-            <select  class="selection__criteres__3" id="Departement">
+            <div class="selection__criteres__type">
+                <p>Choisir une ville :</p>
+                <input type="radio" value="commence" name="criteres" id="commence">
+                <label for="commence">commençe</label>
+                <input type="radio" value="contient" name="criteres" id="contient">
+                <label for="contient">contient</label>
+                <input type="radio" value="codePostal" name="criteres" id="codePostal">
+                <label for="codePostal">code postal</label>
+            </div>
+            <div class="selection__criteres__saisie">
+                <input type="text" id="SousChaine">
+            </div>
+        </div>
+        <div class="selection__criteres__departement">
+            <select id="Departement">
                 <option value="Choisissez">Choisissez un département</option>
             </select>
         </div>

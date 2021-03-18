@@ -11,24 +11,32 @@
     <form class="selection">
         <div class="selection__criteres">
             <div class="selection__criteres__type">
-                <p>Choisir une ville :</p>
-                <input type="radio" value="commence" name="criteres" id="commence">
-                <label for="commence">commençe</label>
-                <input type="radio" value="contient" name="criteres" id="contient">
-                <label for="contient">contient</label>
-                <input type="radio" value="codePostal" name="criteres" id="codePostal">
-                <label for="codePostal">code postal</label>
+                <p>Choisissez un critère :</p>
+                <div>
+                    <input type="radio" value="commence" name="criteres" id="commence">
+                    <label for="commence">commençe</label>    
+                </div>
+                <div>
+                    <input type="radio" value="contient" name="criteres" id="contient">
+                    <label for="contient">contient</label>    
+                </div>
+                <div>
+                    <input type="radio" value="codePostal" name="criteres" id="codePostal">
+                    <label for="codePostal">code postal</label>    
+                </div>
             </div>
             <div class="selection__criteres__saisie">
                 <input type="text" id="SousChaine">
             </div>
         </div>
         <div class="selection__criteres__departement">
+            <p>Restreindre la recherche à un département :</p>
             <select id="Departement">
                 <option value="Choisissez">Choisissez un département</option>
             </select>
         </div>
         <div class="selection__ville">
+            <p>Choisissez votre ville :</p>
             <select id="ListeVilles"></select>
         </div>
         <div class="selection__actions">
@@ -38,32 +46,36 @@
         </div>
     </form>
     <section class="affichage">
-        <article class="affichage__villeA">
-            <p>Ville A</p>
+        <article class="affichage__villeA" id="PartieA">
+            <h2>Ville A</h2>
             <div class="champ">
                 <p id="NomVilleA"></p>
             </div>
-            <div class="champ">
+            <div class="champ" >
                 <p>Latitude :&nbsp;</p>
                 <p id="LatVilleA"></p>
+                <p>&nbsp;°</p>
             </div>
             <div class="champ">
                 <p>Longitude :&nbsp;</p>
                 <p id="LongVilleA"></p>
+                <p>&nbsp;°</p>
             </div>
         </article>
-        <article class="affichage__villeB">
-            <p>Ville B</p>
+        <article class="affichage__villeB" id="PartieB">
+            <h2>Ville B</h2>
             <div class="champ">
                 <p id="NomVilleB"></p>
             </div>
             <div class="champ">
                 <p>Latitude :&nbsp;</p>
                 <p id="LatVilleB"></p>
+                <p>&nbsp;°</p>
             </div>
             <div class="champ">
                 <p>Longitude :&nbsp;</p>
                 <p id="LongVilleB"></p>
+                <p>&nbsp;°</p>
             </div>
         </article>
         <article class="affichage__actions">
@@ -73,20 +85,18 @@
     </section>
     <section class="resultats">
         <h2>Georoute</h2>
-        <article class="resultats__depart">
-            <p>De :&nbsp;</p>
+        <article class="resultats__trajet" id="PartieC">
+            <p>De&nbsp;</p>
             <p id="Depart"></p>
-        </article>
-        <article class="resultats__arrivee">
-            <p>&nbsp;à :&nbsp;</p>
+            <p>&nbsp;à&nbsp;</p>
             <p id="Arrivee"></p>    
         </article>
-        <article class="resultats__distance">
+        <article class="resultats__distance" id="PartieD">
             <p>Distance :&nbsp;</p>
             <p id="Distance"></p>
             <p>&nbsp; Km</p>
         </article>
-        <article class="resultats__azimuth">
+        <article class="resultats__azimuth" id="PartieE">
             <p>Azimuth :&nbsp;</p>
             <p id="Azimuth"></p>
             <p>&nbsp; °</p>

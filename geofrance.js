@@ -399,6 +399,7 @@ function rechercheVille(){
 
 function ChoixVilleA(){
     let choixVille = ListeVilles.options[ListeVilles.selectedIndex].value;
+    let PartieA = document.getElementById('PartieA')
     let nomVilleA = document.getElementById('NomVilleA');
     let latVilleA = document.getElementById('LatVilleA');
     let longVilleA = document.getElementById('LongVilleA');    
@@ -416,10 +417,12 @@ function ChoixVilleA(){
     nomVilleA.innerHTML = choixVille;
     latVilleA.innerHTML = GPS[refX][refY];
     longVilleA.innerHTML = GPS[refX][refY+1];
+    PartieA.style.display ="flex";
 }
 
 function ChoixVilleB(){
     let choixVille = ListeVilles.options[ListeVilles.selectedIndex].value;
+    let PartieB = document.getElementById('PartieB');
     let nomVilleB = document.getElementById('NomVilleB');
     let latVilleB = document.getElementById('LatVilleB');
     let longVilleB = document.getElementById('LongVilleB');    
@@ -437,6 +440,7 @@ function ChoixVilleB(){
     nomVilleB.innerHTML = choixVille;
     latVilleB.innerHTML = GPS[refX][refY];
     longVilleB.innerHTML = GPS[refX][refY+1];
+    PartieB.style.display ="flex";
 }
 function CalculDistance(){
     let latitudeA = document.getElementById('LatVilleA').innerHTML;
@@ -474,6 +478,9 @@ function CalculAzimuth(){
 }
 
 function Calcul(){
+    let PartieC = document.getElementById('PartieC');
+    let PartieD = document.getElementById('PartieD');
+    let PartieE = document.getElementById('PartieE');
     let nomVilleA = document.getElementById('NomVilleA').innerHTML;
     let nomVilleB = document.getElementById('NomVilleB').innerHTML;
     let Depart = document.getElementById('Depart');
@@ -483,6 +490,10 @@ function Calcul(){
     CalculAzimuth();
     Depart.innerHTML = nomVilleA;
     Arrivee.innerHTML = nomVilleB;
+    PartieC.style.display ="flex";
+    PartieD.style.display ="flex";
+    PartieE.style.display ="flex";
+
 }
 
 function Effacer1(){
@@ -494,6 +505,11 @@ function Effacer1(){
 }
 
 function Effacer2(){
+    let PartieA = document.getElementById('PartieA');
+    let PartieB = document.getElementById('PartieB');
+    let PartieC = document.getElementById('PartieC');
+    let PartieD = document.getElementById('PartieD');
+    let PartieE = document.getElementById('PartieE');
     let nomVilleA = document.getElementById('NomVilleA');
     let latVilleA = document.getElementById('LatVilleA');
     let longVilleA = document.getElementById('LongVilleA');    
@@ -515,4 +531,10 @@ function Effacer2(){
     Arrivee.innerHTML = '';
     Distance.innerHTML = '';
     Azimuth.innerHTML = '';
+    PartieA.style.display ="none";
+    PartieB.style.display ="none";
+    PartieC.style.display ="none";
+    PartieD.style.display ="none";
+    PartieE.style.display ="none";
+
 }

@@ -473,6 +473,9 @@ function CalculAzimuth(){
     let Y = Math.sin(longB-longA)*Math.cos(latB);
     let azimuth = 2*Math.atan(Y/(Math.sqrt(X**2+Y**2)+X));
     azimuth = azimuth * 180 / Math.PI;
+    if(azimuth < 0){
+        azimuth = 360 + azimuth;
+    }
     azimuth = Math.round(azimuth);
     Azimuth.innerHTML = azimuth;
 }

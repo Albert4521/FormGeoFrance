@@ -3,6 +3,7 @@ body{
     color: rgb(22, 20, 18);
     margin: 0;
     padding: 0;
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
@@ -21,9 +22,9 @@ h1{
     display: flex;
     flex-flow: column wrap;
     box-sizing: border-box;
-    width: 90%;
+    width: 95%;
     min-width: 18rem;
-    max-width: 36rem;
+    max-width: 40rem;
 }
     .selection__criteres{
         position: relative;
@@ -114,9 +115,10 @@ h1{
             position: relative;
             box-sizing: border-box;
             width: 33%;
-            height: 1.75rem;
+            height: 2.2rem;
             margin: 0 0.5rem;
-            padding: 0.25rem;
+            padding: 0.2rem;
+            font-size: 1.2rem;
         }
     .affichage__villeA{
         box-sizing: border-box;
@@ -125,6 +127,7 @@ h1{
         flex-flow: column nowrap;
         padding: 0;
         margin: 0;
+        font-size: 1.2rem;
 
     }
         .affichage__villeA > h2{
@@ -132,6 +135,7 @@ h1{
             text-align: center;
             padding: 0;
             margin: 0; 
+            font-size: 1.5rem;
             text-decoration: underline solid 3px black;  
         }
         .affichage__villeA > .champ{
@@ -148,12 +152,14 @@ h1{
         flex-flow: column nowrap;
         padding: 0;
         margin: 0;
+        font-size: 1.2rem;
     }
         .affichage__villeB > h2{
             width: 100%;
             text-align: center;
             padding: 0;
             margin: 0;  
+            font-size: 1.5rem;
             text-decoration: underline solid 3px black;  
         }
         .affichage__villeB > .champ{
@@ -177,23 +183,29 @@ h1{
             position: relative;
             box-sizing: border-box;
             width: 45%;
-            height: 1.75rem;
+            height: 2.2rem;
             margin: 0 0.5rem;
-            padding: 0.25rem;
+            padding: 0.2rem;
+            font-size: 1.2rem;
         }
     .resultats h2{
         width: 100%;
         text-align: center;
+        font-size: 1.5rem;
+
     }
     .resultats__trajet{
         display: none;
         flex-flow: row nowrap;
+        font-size: 1.2rem;
     }
     .resultats__distance{
         display: none;
         flex-flow: row nowrap;
+        font-size: 1.2rem;
     }
     .resultats__azimuth{
         display: none;
         flex-flow: row nowrap;
+        font-size: 1.2rem;
     }

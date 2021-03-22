@@ -243,7 +243,7 @@ function rechercheVille(){
     let Ref=0;
     let SousChaine2=0;
     let ComparVal=0;
-    //Détermination du type de critère de recherche
+//Détermination du type de critère de recherche
     for(let i=0; i<criteres.length;i++){
         if(criteres[i].checked == true){
             critere = criteres[i].value;

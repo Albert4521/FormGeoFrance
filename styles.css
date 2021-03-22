@@ -31,6 +31,7 @@ h1{
         width: 100%;
         margin: 0;
         padding: 0.5rem;
+        font-size: 1.3rem;
     }
         .selection__criteres__type{
             position: relative;
@@ -38,7 +39,7 @@ h1{
             margin: 0;
             padding: 0;
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: column nowrap;
             justify-content: space-evenly;
         }
             .selection__criteres__type p{
@@ -52,11 +53,16 @@ h1{
             position: relative;
             display: flex;
             flex-flow: row nowrap;
-            justify-content: center;
-            width: 70%;
-            height: 1.2rem;
-            margin: 0.5rem 15%;
+            justify-content: flex-start;
+            width: 80%;
+            height: 1.5rem;
+            margin: 0.5rem 0;
         }
+            .selection__criteres__saisie input{
+                width: 100%;
+                line-height: 1.4rem;
+                font-size: 1.3rem;
+            }
         .selection__criteres__departement{
             position: relative;
             display: flex;
@@ -67,15 +73,16 @@ h1{
                 position: relative;
                 box-sizing: border-box;
                 width: 100%;
-                margin: 0.25rem 0rem 0.5rem 0.5rem;
-                /*padding: auto;*/
+                margin: 0.25rem 0rem 0.5rem 2%;
+                font-size: 1.2rem;
             }
             .selection__criteres__departement select{
                 position: relative;
                 box-sizing: border-box;
                 width: 80%;
-                height: auto;
-                margin: 0.25rem 0 0.5rem 11%;
+                height: 1.6rem;
+                margin: 0.25rem 0 0.5rem 2%;
+                font-size: 1.2rem;
             }
     .selection__ville{
         position: relative;
@@ -86,10 +93,12 @@ h1{
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
+        font-size: 1.2rem;
     }
         .selection__ville select{
             width: 80%;
-            height: auto;
+            height: 1.6rem;
+            font-size: 1.2rem;
         }
     .selection__actions{
         position: relative;

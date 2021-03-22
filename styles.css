@@ -81,7 +81,7 @@ h1{
                 position: relative;
                 box-sizing: border-box;
                 width: 80%;
-                height: 1.6rem;
+                height: 1.8rem;
                 margin: 0.25rem 0 0.5rem 2%;
                 font-size: 1.2rem;
             }
@@ -98,7 +98,7 @@ h1{
     }
         .selection__ville select{
             width: 80%;
-            height: 1.6rem;
+            height: 1.8rem;
             font-size: 1.2rem;
         }
     .selection__actions{

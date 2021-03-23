@@ -9,40 +9,79 @@
 <body>
     <h1>GeoFrance</h1>
     <form class="selection">
-        <div class="selection__criteres">
-            <div class="selection__criteres__type">
-                <p>Choisissez tout d'abord votre ville A puis votre ville B.</p>
-                <div>
-                    <input type="radio" value="commence" name="criteres" id="commence" checked="checked">
-                    <label for="commence">commençe</label>    
+        <div class="choixA">
+            <div class="selection__criteres">
+                <div class="selection__criteres__type">
+                    <h2>Choix ville A</h2>
+                    <p>Choisissez votre ville de départ</p>
+                    <div>
+                        <input type="radio" value="commence" name="criteresA" id="commenceA" checked="checked">
+                        <label for="commenceA">commençe</label>    
+                    </div>
+                    <div>
+                        <input type="radio" value="contient" name="criteresA" id="contientA">
+                        <label for="contient">contient</label>    
+                    </div>
+                    <div>
+                        <input type="radio" value="codePostal" name="criteresA" id="codePostalA">
+                        <label for="codePostalA">code postal</label>    
+                    </div>
                 </div>
-                <div>
-                    <input type="radio" value="contient" name="criteres" id="contient">
-                    <label for="contient">contient</label>    
-                </div>
-                <div>
-                    <input type="radio" value="codePostal" name="criteres" id="codePostal">
-                    <label for="codePostal">code postal</label>    
+                <div class="selection__criteres__saisie">
+                    <input type="text" id="SousChaineA">
                 </div>
             </div>
-            <div class="selection__criteres__saisie">
-                <input type="text" id="SousChaine">
+            <div class="selection__criteres__departement">
+                <p>Restreindre la recherche à un département</p>
+                <select id="DepartementA">
+                    <option value="Choisissez">Choisissez un département</option>
+                </select>
             </div>
+            <div class="selection__ville">
+                <p>Sélectionnez votre ville parmi les résultats proposés dans la liste ci-dessous:</p>
+                <select id="ListeVillesA"></select>
+            </div>
+            <div class="selection__actions">
+                <input type="button" class="bouton" id="B1" value="Valider">
+                <input type="button" class="bouton" id="B2" value="Effacer">
+            </div>    
         </div>
-        <div class="selection__criteres__departement">
-            <p>Restreindre la recherche à un département</p>
-            <select id="Departement">
-                <option value="Choisissez">Choisissez un département</option>
-            </select>
-        </div>
-        <div class="selection__ville">
-            <p>Sélectionnez votre ville parmi les résultats proposés dans la liste ci-dessous:</p>
-            <select id="ListeVilles"></select>
-        </div>
-        <div class="selection__actions">
-            <input type="button" class="bouton" id="B1" value="Ville A">
-            <input type="button" class="bouton" id="B2" value="Ville B">
-            <input type="button" class="bouton" id="B3" value="Effacer">
+        <div class="choixB">
+            <div class="selection__criteres">
+                <div class="selection__criteres__type">
+                    <h2>Choix ville B</h2>
+                    <p>Choisissez votre ville d'arrivée</p>
+                    <div>
+                        <input type="radio" value="commence" name="criteresB" id="commenceB" checked="checked">
+                        <label for="commenceB">commençe</label>    
+                    </div>
+                    <div>
+                        <input type="radio" value="contient" name="criteresB" id="contientB">
+                        <label for="contientB">contient</label>    
+                    </div>
+                    <div>
+                        <input type="radio" value="codePostal" name="criteresB" id="codePostalB">
+                        <label for="codePostalB">code postal</label>    
+                    </div>
+                </div>
+                <div class="selection__criteres__saisie">
+                    <input type="text" id="SousChaineB">
+                </div>
+            </div>
+            <div class="selection__criteres__departement">
+                <p>Restreindre la recherche à un département</p>
+                <select id="DepartementB">
+                    <option value="Choisissez">Choisissez un département</option>
+                </select>
+            </div>
+            <div class="selection__ville">
+                <p>Sélectionnez votre ville parmi les résultats proposés dans la liste ci-dessous:</p>
+                <select id="ListeVillesB"></select>
+            </div>
+            <div class="selection__actions">
+                <input type="button" class="bouton" id="B3" value="Valider">
+                <input type="button" class="bouton" id="B4" value="EffacerB">
+            </div>
         </div>
     </form>
     <section class="affichage">
@@ -79,8 +118,8 @@
             </div>
         </article>
         <article class="affichage__actions">
-            <input type="button" class="bouton" id="B4" value="Calculer">
-            <input type="button" class="bouton" id="B5" value="Effacer">
+            <input type="button" class="bouton" id="B5" value="Calculer">
+            <input type="button" class="bouton" id="B6" value="Effacer">
         </article>
     </section>
     <section class="resultats">

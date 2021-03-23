@@ -1,17 +1,26 @@
-let ListeVilles = document.getElementById("ListeVilles");
-ListeVilles.addEventListener('focus',rechercheVille)
-let listeDPT = document.getElementById('Departement');
-listeDPT.addEventListener('focus',listeDpt);
+let ListeVillesA = document.getElementById("ListeVillesA");
+ListeVillesA.addEventListener('focus',rechercheVilleA);
+let ListeVillesB = document.getElementById("ListeVillesB");
+ListeVillesB.addEventListener('focus',rechercheVilleB);
+
+let listeDPTA = document.getElementById('DepartementA');
+listeDPTA.addEventListener('focus',listeDptA);
+let listeDPTB = document.getElementById('DepartementB');
+listeDPTB.addEventListener('focus',listeDptB);
+
 let Bouton1 = document.getElementById('B1');
 Bouton1.addEventListener('click',ChoixVilleA);
 let Bouton2 = document.getElementById('B2');
-Bouton2.addEventListener('click',ChoixVilleB);
+Bouton2.addEventListener('click',EffacerA);
 let Bouton3 = document.getElementById('B3');
-Bouton3.addEventListener('click',Effacer1);
+Bouton3.addEventListener('click',ChoixVilleB);
 let Bouton4 = document.getElementById('B4');
-Bouton4.addEventListener('click',Calcul);
+Bouton4.addEventListener('click',EffacerB);
+
 let Bouton5 = document.getElementById('B5');
-Bouton5.addEventListener('click',Effacer2);
+Bouton5.addEventListener('click',Calcul);
+let Bouton6 = document.getElementById('B6');
+Bouton6.addEventListener('click',Effacer2);
 
 
 let D001 = new Array('D001','Ambérieu-en-Bugey (01500)','Ambérieux-en-Dombes (01330)','Ambléon (01300)','Ambronay (01500)','Ambutrix (01500)','Andert-et-Condon (01300)','Anglefort (01350)','Apremont (01100)','Aranc (01110)','Arandas (01230)','Arbent (01100)','Arbigny (01190)','Arboys en Bugey (01300)','Argis (01230)','Armix (01510)','Ars-sur-Formans (01480)','Artemare (01510)','Asnières-sur-Saône (01570)','Attignat (01340)','Bâgé-la-Ville (01380)','Bâgé-le-Châtel (01380)','Balan (01360)','Baneins (01990)','Béard-Géovreissiat (01460)','Beaupont (01270)','Beauregard (01480)','Béligneux (01360)','Bellegarde-sur-Valserine (01200)','Belley (01300)','Belleydoux (01130)','Bellignat (01100)','Belmont-Luthézieu (01260)','Bénonces (01470)','Bény (01370)','Béon (01350)','Béréziat (01340)','Bettant (01500)','Bey (01290)','Beynost (01700)','Billiat (01200)','Birieux (01330)','Biziat (01290)','Blyes (01150)','Bohas-Meyriat-Rignat (01250)','Boissey (01380)','Bolozon (01450)','Bouligneux (01330)','Bourg-en-Bresse (01000)','Bourg-Saint-Christophe (01800)','Boyeux-Saint-Jérôme (01640)','Boz (01190)','Brégnier-Cordon (01300)','Brénaz (01260)','Brénod (01110)','Brens (01300)','Bressolles (01360)','Brion (01460)','Briord (01470)','Buellas (01310)','Ceignes (01430)','Cerdon (01450)','Certines (01240)','Cessy (01170)','Ceyzériat (01250)','Ceyzérieu (01350)','Chalamont (01320)','Chaleins (01480)','Chaley (01230)','Challes-la-Montagne (01450)','Challex (01630)','Champagne-en-Valromey (01260)','Champdor-Corcelles (01110)','Champfromier (01410)','Chanay (01420)','Chancia (01590)','Chaneins (01990)','Chanoz-Châtenay (01400)','Charix (01130)','Charnoz-sur-Ain (01800)','Château-Gaillard (01500)','Châtenay (01320)','Châtillon-en-Michaille (01200)','Châtillon-la-Palud (01320)','Châtillon-sur-Chalaronne (01400)','Chavannes-sur-Reyssouze (01190)','Chavannes-sur-Suran (01250)','Chaveyriat (01660)','Chavornay (01510)','Chazey-Bons (01300)','Chazey-sur-Ain (01150)','Cheignieu-la-Balme (01510)','Chevillard (01430)','Chevroux (01190)','Chevry (01170)','Chézery-Forens (01200)','Civrieux (01390)','Cize (01250)','Cleyzieu (01230)','Coligny (01270)','Collonges (01550)','Colomieu (01300)','Conand (01230)','Condamine (01430)','Condeissiat (01400)','Confort (01200)','Confrançon (01310)','Contrevoz (01300)','Conzieu (01300)','Corbonod (01420)','Corlier (01110)','Cormaranche-en-Bugey (01110)','Cormoranche-sur-Saône (01290)','Cormoz (01560)','Corveissiat (01250)','Courmangoux (01370)','Courtes (01560)','Crans (01320)','Cras-sur-Reyssouze (01340)','Cressin-Rochefort (01350)','Crottet (01290)','Crozet (01170)','Cruzilles-lès-Mépillat (01290)','Culoz (01350)','Curciat-Dongalon (01560)','Curtafond (01310)','Cuzieu (01300)','Dagneux (01120)','Divonne-les-Bains (01220)','Dommartin (01380)','Dompierre-sur-Chalaronne (01400)','Dompierre-sur-Veyle (01240)','Domsure (01270)','Dortan (01590)','Douvres (01500)','Drom (01250)','Druillat (01160)','Échallon (01130)','Échenevex (01170)','Éloise (01200)','Étrez (01340)','Évosges (01230)','Faramans (01800)','Fareins (01480)','Farges (01550)','Feillens (01570)','Ferney-Voltaire (01210)','Flaxieu (01350)','Foissiat (01340)','Francheleins (01090)','Frans (01480)','Garnerans (01140)','Genouilleux (01090)','Géovreisset (01100)','Germagnat (01250)','Gex (01170)','Giron (01130)','Gorrevod (01190)','Grand-Corent (01250)','Grièges (01290)','Grilly (01220)','Groissiat (01100)','Groslée-Saint-Benoit (01680)','Guéreins (01090)','Haut Valromey (01260)','Hautecourt-Romanèche (01250)','Hauteville-Lompnes (01110)','Hostiaz (01110)','Illiat (01140)','Injoux-Génissiat (01200)','Innimond (01680)','Izenave (01430)','Izernore (01580)','Izieu (01300)','Jassans-Riottier (01480)','Jasseron (01250)','Jayat (01340)','Journans (01250)','Joyeux (01800)','Jujurieux (01640)','La Boisse (01120)','La Burbanche (01510)','La Chapelle-du-Châtelard (01240)','La Tranclière (01160)','Labalme (01450)','L\'Abergement-Clémenciat (01400)','L\'Abergement-de-Varey (01640)','Lagnieu (01150)','Laiz (01290)','Lajoux (01410)','Lancrans (01200)','Lantenay (01430)','Lapeyrouse (01330)','Lavancia-Epercy (01590)','Lavours (01350)','Le Montellier (01800)','Le Plantay (01330)','Le Poizat-Lalleyriat (01130)','Léaz (01200)','Lélex (01410)','Lent (01240)','Les Neyrolles (01130)','Lescheroux (01560)','Leyment (01150)','Leyssard (01450)','Lhôpital (01420)','Lhuis (01680)','Lochieu (01260)','Lompnas (01680)','Lompnieu (01260)','Loyettes (01360)','Lurcy (01090)','Magnieu (01300)','Maillat (01430)','Malafretaz (01340)','Mantenay-Montlin (01560)','Manziat (01570)','Marboz (01851)','Marchamp (01680)','Marignieu (01300)','Marlieux (01240)','Marsonnas (01340)','Martignat (01100)','Massieux (01600)','Massignieu-de-Rives (01300)','Matafelon-Granges (01580)','Meillonnas (01370)','Mérignat (01450)','Messimy-sur-Saône (01480)','Meximieux (01800)','Mézériat (01660)','Mijoux (01170)','Mionnay (01390)','Miribel (01700)','Misérieux (01600)','Mogneneins (01140)','Montagnat (01250)','Montagnieu (01470)','Montanges (01200)','Montceaux (01090)','Montcet (01310)','Monthieux (01390)','Montluel (01120)','Montmerle-sur-Saône (01090)','Montracol (01310)','Montréal-la-Cluse (01460)','Montrevel-en-Bresse (01340)','Murs-et-Gélignieux (01300)','Nantua (01130)','Neuville-les-Dames (01400)','Neuville-sur-Ain (01160)','Neyron (01700)','Niévroz (01120)','Nivollet-Montgriffon (01230)','Nurieux-Volognat (01460)','Oncieu (01230)','Ordonnaz (01510)','Ornex (01210)','Outriaz (01430)','Oyonnax (01100)','Ozan (01190)','Parcieux (01600)','Parves et Nattages (01300)','Péron (01630)','Péronnas (01960)','Pérouges (01800)','Perrex (01540)','Peyriat (01430)','Peyrieu (01300)','Peyzieux-sur-Saône (01140)','Pirajoux (01270)','Pizay (01120)','Plagne (01130)','Polliat (01310)','Pollieu (01350)','Poncin (01450)','Pont-d\'Ain (01160)','Pont-de-Vaux (01190)','Pont-de-Veyle (01290)','Port (01460)','Pougny (01550)','Pouillat (01250)','Prémeyzel (01300)','Prémillieu (01110)','Prévessin-Moëns (01280)','Priay (01160)','Pugieu (01510)','Ramasse (01250)','Rancé (01390)','Relevant (01990)','Replonges (01750)','Revonnas (01250)','Reyrieux (01600)','Reyssouze (01190)','Rignieux-le-Franc (01800)','Romans (01400)','Rossillon (01510)','Ruffieu (01260)','Saint-Alban (01450)','Saint-André-de-Bâgé (01380)','Saint-André-de-Corcy (01390)','Saint-André-d\'Huiriat (01290)','Saint-André-le-Bouchoux (01240)','Saint-André-sur-Vieux-Jonc (01960)','Saint-Bénigne (01190)','Saint-Bernard (01600)','Saint-Champ (01300)','Saint-Cyr-sur-Menthon (01380)','Saint-Denis-en-Bugey (01500)','Saint-Denis-lès-Bourg (01000)','Saint-Didier-d\'Aussiat (01340)','Saint-Didier-de-Formans (01600)','Saint-Didier-sur-Chalaronne (01140)','Sainte-Croix (01120)','Sainte-Euphémie (01600)','Sainte-Julie (01150)','Saint-Éloi (01800)','Sainte-Olive (01330)','Saint-Étienne-du-Bois (01370)','Saint-Étienne-sur-Chalaronne (01140)','Saint-Étienne-sur-Reyssouze (01190)','Saint-Genis-Pouilly (01630)','Saint-Genis-sur-Menthon (01380)','Saint-Georges-sur-Renon (01400)','Saint-Germain-de-Joux (01130)','Saint-Germain-les-Paroisses (01300)','Saint-Germain-sur-Renon (01240)','Saint-Jean-de-Gonville (01630)','Saint-Jean-de-Niost (01800)','Saint-Jean-de-Thurigneux (01390)','Saint-Jean-le-Vieux (01640)','Saint-Jean-sur-Reyssouze (01560)','Saint-Jean-sur-Veyle (01290)','Saint-Julien-sur-Reyssouze (01560)','Saint-Julien-sur-Veyle (01540)','Saint-Just (01250)','Saint-Laurent-sur-Saône (01750)','Saint-Marcel (01390)','Saint-Martin-de-Bavel (01510)','Saint-Martin-du-Frêne (01430)','Saint-Martin-du-Mont (01160)','Saint-Martin-le-Châtel (01310)','Saint-Maurice-de-Beynost (01700)','Saint-Maurice-de-Gourdans (01800)','Saint-Maurice-de-Rémens (01500)','Saint-Nizier-le-Bouchoux (01560)','Saint-Nizier-le-Désert (01320)','Saint-Paul-de-Varax (01240)','Saint-Rambert-en-Bugey (01230)','Saint-Rémy (01310)','Saint-Sorlin-en-Bugey (01150)','Saint-Sulpice (01340)','Saint-Trivier-de-Courtes (01560)','Saint-Trivier-sur-Moignans (01990)','Saint-Vulbas (01150)','Salavre (01270)','Samognat (01580)','Sandrans (01400)','Sault-Brénaz (01150)','Sauverny (01220)','Savigneux (01480)','Ségny (01170)','Seillonnaz (01470)','Sergy (01630)','Sermoyer (01190)','Serrières-de-Briord (01470)','Serrières-sur-Ain (01450)','Servas (01960)','Servignat (01560)','Seyssel (01420)','Simandre-sur-Suran (01250)','Sonthonnax-la-Montagne (01580)','Souclin (01150)','Sulignat (01400)','Surjoux (01420)','Sutrieu (01260)','Talissieu (01510)','Tenay (01230)','Thézillieu (01110)','Thil (01120)','Thoiry (01710)','Thoissey (01140)','Torcieu (01230)','Tossiat (01250)','Toussieux (01600)','Tramoyes (01390)','Trévoux (01600)','Valeins (01140)','Val-Revermont (01370)','Vandeins (01660)','Varambon (01160)','Vaux-en-Bugey (01150)','Verjon (01270)','Vernoux (01560)','Versailleux (01330)','Versonnex (01210)','Vesancy (01170)','Vescours (01560)','Vésines (01570)','Vieu (01260)','Vieu-d\'Izenave (01430)','Villars-les-Dombes (01330)','Villebois (01150)','Villemotier (01270)','Villeneuve (01480)','Villereversure (01250)','Villes (01200)','Villette-sur-Ain (01320)','Villieu-Loyes-Mollon (01800)','Viriat (01440)','Virieu-le-Grand (01510)','Virieu-le-Petit (01260)','Virignin (01300)','Vongnes (01350)','Vonnas (01540)')
@@ -222,8 +231,8 @@ let GPS = new Array(GPS001,GPS002,GPS003,GPS004,GPS006,GPS007,GPS008,GPS009,GPS0
 
 
 
-function listeDpt(){
-    let Departement = document.getElementById('Departement');
+function listeDptA(){
+    let Departement = document.getElementById('DepartementA');
     Departement.options.length = 0;
     let j=0;
     for(let i=0; i< Tableau_DPT.length; i=i+2){
@@ -233,11 +242,23 @@ function listeDpt(){
     }
 }
 
-function rechercheVille(){
-    let Departement = document.getElementById('Departement');
-    let criteres = document.getElementsByName("criteres");
+function listeDptB(){
+    let Departement = document.getElementById('DepartementB');
+    Departement.options.length = 0;
+    let j=0;
+    for(let i=0; i< Tableau_DPT.length; i=i+2){
+        let opt = new Option(Tableau_DPT[i],Tableau_DPT[i+1]);
+        Departement.options[j] = opt;
+        j=j+1;
+    }
+}
+
+
+function rechercheVilleA(){
+    let Departement = document.getElementById('DepartementA');
+    let criteres = document.getElementsByName("criteresA");
     let critere = 0;
-    let SousChaine1 = document.getElementById("SousChaine").value;
+    let SousChaine1 = document.getElementById("SousChaineA").value;
     let choixDpt = Departement.options[Departement.selectedIndex].value;
     let SelectionVilles = new Array();
     let Ref=0;
@@ -251,7 +272,7 @@ function rechercheVille(){
     }
 
 //Remise à zéro de la liste précédente des villes
-    ListeVilles.options.length = 0;
+    ListeVillesA.options.length = 0;
 
 //On vérifie si au moins un département est sélectionné ou qu'un critère de recherche est saisi
     if(choixDpt=='Choisissez' && SousChaine1 == ''){
@@ -294,7 +315,7 @@ function rechercheVille(){
 //On créé la liste personnalisée des villes correspondant aux critères
                 for(let i=0; i< SelectionVilles.length;i++){
                     var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
-                    ListeVilles.options[i] = opt;
+                    ListeVillesA.options[i] = opt;
                 }
             break;
 //CAS n°2 : le nom de la ville contient la chaine de caractères recherchée ...
@@ -317,7 +338,7 @@ function rechercheVille(){
                 }
                 for(let i=0; i< SelectionVilles.length;i++){
                     var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
-                    ListeVilles.options[i] = opt;
+                    ListeVillesA.options[i] = opt;
                 }
             break;
 //CAS n°3 : le nom de la ville posède le code postal recherché ...
@@ -331,7 +352,7 @@ function rechercheVille(){
                 }
                 for(let i=0; i< SelectionVilles.length;i++){
                     var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
-                    ListeVilles.options[i] = opt;
+                    ListeVillesA.options[i] = opt;
                 }
             break;
         }
@@ -359,7 +380,7 @@ function rechercheVille(){
                 }
                 for(let i=0; i< SelectionVilles.length;i++){
                     var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
-                    ListeVilles.options[i] = opt;
+                    ListeVillesA.options[i] = opt;
                 }
             break;
             case "contient":
@@ -378,7 +399,7 @@ function rechercheVille(){
                 }
                 for(let i=0; i< SelectionVilles.length;i++){
                     var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
-                    ListeVilles.options[i] = opt;
+                    ListeVillesA.options[i] = opt;
                 }
             break;
 
@@ -390,15 +411,179 @@ function rechercheVille(){
                 }
                 for(let i=0; i< SelectionVilles.length;i++){
                     var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
-                    ListeVilles.options[i] = opt;
+                    ListeVillesA.options[i] = opt;
+                }
+            break;
+        }
+    }
+}
+function rechercheVilleB(){
+    let Departement = document.getElementById('DepartementB');
+    let criteres = document.getElementsByName("criteresB");
+    let critere = 0;
+    let SousChaine1 = document.getElementById("SousChaineB").value;
+    let choixDpt = Departement.options[Departement.selectedIndex].value;
+    let SelectionVilles = new Array();
+    let Ref=0;
+    let SousChaine2=0;
+    let ComparVal=0;
+//Détermination du type de critère de recherche
+    for(let i=0; i<criteres.length;i++){
+        if(criteres[i].checked == true){
+            critere = criteres[i].value;
+        }
+    }
+
+//Remise à zéro de la liste précédente des villes
+    ListeVillesB.options.length = 0;
+
+//On vérifie si au moins un département est sélectionné ou qu'un critère de recherche est saisi
+    if(choixDpt=='Choisissez' && SousChaine1 == ''){
+        alert('Veuillez saisir un code postal ou les premières lettres d\'une ville');
+        return;
+    }
+//On traite les lettes accentuées et la casse de la sous chaine reliée au critère de recherche
+    SousChaine2 = SousChaine1.toLowerCase();
+    SousChaine2 = SousChaine2.replace(/ste/g,'sainte');
+    SousChaine2 = SousChaine2.replace(/st/g,'saint');
+    SousChaine2 = SousChaine2.replace(/-/g,' ');
+    SousChaine2 = SousChaine2.replace(/â|à/g,'a');
+    SousChaine2 = SousChaine2.replace(/ê|é|è|ë/g,'e');
+    SousChaine2 = SousChaine2.replace(/ï|î/g,'i');
+    SousChaine2 = SousChaine2.replace(/ü|û/g,'u');
+    SousChaine2 = SousChaine2.toUpperCase();            
+//Si choixDpt = Choisissez, alors il s'agit d'une recherche nationale
+    if(choixDpt=='Choisissez'){
+        switch(critere){
+//CAS n°1 : le nom de la ville commence par les lettres recherchées ...
+            case "commence":
+//On va parcourir toutes les villes de chaque département au moyen d'une double boucle
+                for(let i=0; i<DPT.length;i++){
+                    for(let j=0; j<DPT[i].length;j++){
+//On traite les lettes accentuées et la casse des valaeurs de notre base de données
+                        ComparVal = DPT[i][j];
+                        ComparVal = ComparVal.toLowerCase();
+                        ComparVal = ComparVal.replace(/â|à/g,'a');
+                        ComparVal = ComparVal.replace(/ê|é|è|ë/g,'e');
+                        ComparVal = ComparVal.replace(/ï|î/g,'i');
+                        ComparVal = ComparVal.replace(/ü|û/g,'u');                    
+                        ComparVal = ComparVal.replace(/-/g,' ');
+                        ComparVal = ComparVal.toUpperCase();
+//Si une valeur correspond au critère, elle sera stockée provisoirement dans un tableau
+                        if(ComparVal.startsWith(SousChaine2)==true){
+                            SelectionVilles.push(DPT[i][j]);
+                        }        
+                    }
+                }
+//On créé la liste personnalisée des villes correspondant aux critères
+                for(let i=0; i< SelectionVilles.length;i++){
+                    var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
+                    ListeVillesB.options[i] = opt;
+                }
+            break;
+//CAS n°2 : le nom de la ville contient la chaine de caractères recherchée ...
+            case "contient":
+                for(let i=0; i<DPT.length;i++){
+                    for(let j=0; j<DPT[i].length;j++){
+//On traite les lettes accentuées et la casse des valaeurs de notre base de données
+                        ComparVal = DPT[i][j];
+                        ComparVal = ComparVal.toLowerCase();
+                        ComparVal = ComparVal.replace(/â|à/g,'a');
+                        ComparVal = ComparVal.replace(/ê|é|è|ë/g,'e');
+                        ComparVal = ComparVal.replace(/ï|î/g,'i');
+                        ComparVal = ComparVal.replace(/ü|û/g,'u');                    
+                        ComparVal = ComparVal.replace(/-/g,' ');
+                        ComparVal = ComparVal.toUpperCase();
+                        if(ComparVal.includes(SousChaine2)==true){
+                            SelectionVilles.push(DPT[i][j]);
+                        }        
+                    }
+                }
+                for(let i=0; i< SelectionVilles.length;i++){
+                    var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
+                    ListeVillesB.options[i] = opt;
+                }
+            break;
+//CAS n°3 : le nom de la ville posède le code postal recherché ...
+            case "codePostal":
+                for(let i=0; i<DPT.length;i++){
+                    for(let j=0; j<DPT[i].length;j++){
+                        if(DPT[i][j].includes(SousChaine1)==true){
+                            SelectionVilles.push(DPT[i][j]);
+                        }        
+                    }
+                }
+                for(let i=0; i< SelectionVilles.length;i++){
+                    var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
+                    ListeVillesB.options[i] = opt;
+                }
+            break;
+        }
+    }else{
+        for(let i=0;i<DPT.length;i++){
+            if(choixDpt ==DPT[i][0]){
+                Ref = i;
+                break;
+            }
+        }
+        switch(critere){
+            case "commence":
+                for(let i=1; i<DPT[Ref].length;i++){
+                    ComparVal = DPT[Ref][i];
+                    ComparVal = ComparVal.toLowerCase();
+                    ComparVal = ComparVal.replace(/â|à/g,'a');
+                    ComparVal = ComparVal.replace(/ê|é|è|ë/g,'e');
+                    ComparVal = ComparVal.replace(/ï|î/g,'i');
+                    ComparVal = ComparVal.replace(/ü|û/g,'u');                    
+                    ComparVal = ComparVal.replace(/-/g,' ');
+                    ComparVal = ComparVal.toUpperCase();
+                    if(ComparVal.startsWith(SousChaine2)){
+                    SelectionVilles.push(DPT[Ref][i]);
+                    }
+                }
+                for(let i=0; i< SelectionVilles.length;i++){
+                    var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
+                    ListeVillesB.options[i] = opt;
+                }
+            break;
+            case "contient":
+                for(let i=1; i<DPT[Ref].length;i++){
+                    ComparVal = DPT[Ref][i];
+                    ComparVal = ComparVal.toLowerCase();
+                    ComparVal = ComparVal.replace(/â|à/g,'a');
+                    ComparVal = ComparVal.replace(/ê|é|è|ë/g,'e');
+                    ComparVal = ComparVal.replace(/ï|î/g,'i');
+                    ComparVal = ComparVal.replace(/ü|û/g,'u');                    
+                    ComparVal = ComparVal.replace(/-/g,' ');
+                    ComparVal = ComparVal.toUpperCase();
+                    if(ComparVal.includes(SousChaine2)){
+                    SelectionVilles.push(DPT[Ref][i]);
+                    }
+                }
+                for(let i=0; i< SelectionVilles.length;i++){
+                    var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
+                    ListeVillesB.options[i] = opt;
+                }
+            break;
+
+            case "codePostal":
+                for(let i=1; i<DPT[Ref].length;i++){
+                    if(DPT[Ref][i].includes(SousChaine1)){
+                    SelectionVilles.push(DPT[Ref][i]);
+                    }
+                }
+                for(let i=0; i< SelectionVilles.length;i++){
+                    var opt = new Option(SelectionVilles[i],SelectionVilles[i]);
+                    ListeVillesB.options[i] = opt;
                 }
             break;
         }
     }
 }
 
+
 function ChoixVilleA(){
-    let choixVille = ListeVilles.options[ListeVilles.selectedIndex].value;
+    let choixVille = ListeVillesA.options[ListeVillesA.selectedIndex].value;
     let PartieA = document.getElementById('PartieA')
     let nomVilleA = document.getElementById('NomVilleA');
     let latVilleA = document.getElementById('LatVilleA');
@@ -421,7 +606,7 @@ function ChoixVilleA(){
 }
 
 function ChoixVilleB(){
-    let choixVille = ListeVilles.options[ListeVilles.selectedIndex].value;
+    let choixVille = ListeVillesB.options[ListeVillesB.selectedIndex].value;
     let PartieB = document.getElementById('PartieB');
     let nomVilleB = document.getElementById('NomVilleB');
     let latVilleB = document.getElementById('LatVilleB');
@@ -499,13 +684,22 @@ function Calcul(){
 
 }
 
-function Effacer1(){
-    let SousChaine = document.getElementById("SousChaine");
+function EffacerA(){
+    let SousChaine = document.getElementById("SousChaineA");
 
     SousChaine.value = '';
-    ListeVilles.options.length = 0;
-    listeDpt();
+    ListeVillesA.options.length = 0;
+    listeDptA();
 }
+
+function EffacerB(){
+    let SousChaine = document.getElementById("SousChaineB");
+
+    SousChaine.value = '';
+    ListeVillesB.options.length = 0;
+    listeDptB();
+}
+
 
 function Effacer2(){
     let PartieA = document.getElementById('PartieA');

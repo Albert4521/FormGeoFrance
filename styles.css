@@ -5,36 +5,48 @@ body{
     padding: 0;
     width: 100%;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: center;
 }
 h1{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 3rem;
-}
-.selection, .affichage, .resultats{
     position: relative;
     box-sizing: border-box;
+    font-family: 'Vorname', Courier, monospace;
+    width: 100%;
+    text-align: center;
+    margin: 0.5rem;
+    padding: 0;
+    font-size: 6rem;
+}
+.choix{
+    position: relative;
+    box-sizing: border-box;
+    width: 90%;
+    min-width: 16rem;
+    max-width: 40rem;
     border: 2px dotted rgb(187, 11, 11);
-    margin: 1rem 1rem;
-    padding: 0.5rem;
+    margin: 0.5rem 1rem;
+    padding: 0.75rem;
     display: flex;
     flex-flow: column wrap;
     box-sizing: border-box;
-    width: 95%;
-    min-width: 18rem;
-    max-width: 40rem;
+    font-family: 'Typewriter1', Courier, monospace;
+    font-size: 1.1rem;
 }
-    .selection__criteres{
+    .choix h2{
+        width: 100%;
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    .choix__criteres{
         position: relative;
         box-sizing: border-box;
         width: 100%;
         margin: 0;
-        padding: 0.5rem;
-        font-size: 1.3rem;
+        margin: 0.25rem 0;
     }
-        .selection__criteres__type{
+        .choix__criteres__type{
             position: relative;
             box-sizing: border-box;
             margin: 0;
@@ -43,65 +55,80 @@ h1{
             flex-flow: column nowrap;
             justify-content: space-evenly;
         }
-            .selection__criteres__type p{
+            .choix__criteres__type p{
                 position: relative;
                 box-sizing: border-box;
                 width: 100%;
-                margin: 0.25rem 0 0.5rem 0;
+                margin: 0.5rem 0;
                 padding: 0;
             }
-        .selection__criteres__saisie{
+
+            .choix__criteres__type div{
+                position: relative;
+                box-sizing: border-box;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: flex-start;
+                margin: 0 5%;
+
+            }
+        .choix__criteres__saisie{
             position: relative;
             display: flex;
             flex-flow: row nowrap;
-            justify-content: flex-start;
+            justify-content: center;
             width: 80%;
             height: 1.5rem;
-            margin: 0.5rem 0;
+            padding: 0;
+            margin: 0.5rem 0 0.5rem 1rem;
         }
-            .selection__criteres__saisie input{
-                width: 100%;
-                line-height: 1.4rem;
-                font-size: 1.3rem;
+            .choix__criteres__saisie input{
+                width: 60%;
+                line-height: 1.1rem;
             }
-        .selection__criteres__departement{
+        .choix__criteres__departement{
             position: relative;
             display: flex;
             flex-flow: row wrap;
             justify-content: flex-start;
         }
-            .selection__criteres__departement p{
+            .choix__criteres__departement p{
                 position: relative;
                 box-sizing: border-box;
-                width: 100%;
-                margin: 0.25rem 0rem 0.5rem 2%;
-                font-size: 1.2rem;
+                width: 90%;
+                margin: 0.25rem 0;
+                padding: 0;
             }
-            .selection__criteres__departement select{
+            .choix__criteres__departement select{
                 position: relative;
                 box-sizing: border-box;
                 width: 80%;
                 height: 1.8rem;
-                margin: 0.25rem 0 0.5rem 2%;
-                font-size: 1.2rem;
+                margin: 0.25rem 0;
             }
-    .selection__ville{
+    .choix__ville{
         position: relative;
         box-sizing: border-box;
         width: 100%;
         margin: 0;
-        padding: 0.5rem;
+        padding: 0.5rem 0;
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
-        font-size: 1.2rem;
     }
-        .selection__ville select{
+        .choix__ville p{
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0;
+    }
+        .choix__ville select{
+            position: relative;
+            box-sizing: border-box;
             width: 80%;
             height: 1.8rem;
-            font-size: 1.2rem;
+            margin: 0.25rem 0;
         }
-    .selection__actions{
+    .choix__actions{
         position: relative;
         box-sizing: border-box;
         width: 100%;
@@ -111,7 +138,7 @@ h1{
         flex-flow: row nowrap;
         justify-content: space-between;
     }
-        .selection__actions input{
+        .choix__actions input{
             position: relative;
             box-sizing: border-box;
             width: 33%;
@@ -120,11 +147,26 @@ h1{
             padding: 0.2rem;
             font-size: 1.2rem;
         }
+.affichage{
+    position: relative;
+    box-sizing: border-box;
+    border: 2px dotted rgb(187, 11, 11);
+    margin: 1rem 1rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 95%;
+    min-width: 25rem;
+    max-width: 86rem;
+}
     .affichage__villeA{
         box-sizing: border-box;
         position: relative;
         display: none;
         flex-flow: column nowrap;
+        width: 40%;
         padding: 0;
         margin: 0;
         font-size: 1.2rem;
@@ -150,6 +192,7 @@ h1{
         position: relative;
         display: none;
         flex-flow: column nowrap;
+        width: 40%;
         padding: 0;
         margin: 0;
         font-size: 1.2rem;
@@ -188,6 +231,19 @@ h1{
             padding: 0.2rem;
             font-size: 1.2rem;
         }
+.resultats{
+    position: relative;
+    box-sizing: border-box;
+    border: 2px dotted rgb(187, 11, 11);
+    margin: 1rem 1rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-flow: column wrap;
+    box-sizing: border-box;
+    width: 95%;
+    min-width: 25rem;
+    max-width: 80rem;
+}
     .resultats h2{
         width: 100%;
         text-align: center;

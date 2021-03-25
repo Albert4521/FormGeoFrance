@@ -1,0 +1,44 @@
+@font-face{
+    font-family: 'Oldlondon1';
+    src: url('police/oldlondon_1.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'Oldlondon2';
+    src: url('police/oldlondon_2.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'Royalinitial';
+    src: url('police/RoyalInitialen.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'Typewriter1';
+    src: url('police/Typewriter_1.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'Typewriter2';
+    src: url('police/Typewriter_2.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'Typewriter3';
+    src: url('police/Typewriter_3.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'Typewriter4';
+    src: url('police/Typewriter_4.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'Victoriatypewriter1';
+    src: url('police/VictoriaTypewriter1.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'Victoriatypewriter2';
+    src: url('police/VictoriaTypewriter_2.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'Victoriatypewriter3';
+    src: url('police/VictoriaTypewriter_3.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'Vorname';
+    src: url('police/Vorname.ttf') format('truetype');
+}
